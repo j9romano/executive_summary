@@ -10,8 +10,8 @@
   --margin-right: 1in;
   --content-width: calc(var(--width) - var(--margin-right) - var(--margin-left));
   --main-width: calc(var(--content-width) - var(--sidebar-width));
-  --sidebar-width: 15rem;
-  --sidebar-horizontal-padding: 0.2in;
+  --sidebar-width: 1in;
+  --sidebar-horizontal-padding: 0.1in;
 }
 
 .title-page {

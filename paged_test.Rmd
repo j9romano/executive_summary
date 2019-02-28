@@ -95,8 +95,33 @@ gt(tbl) %>%
 
 # {-} 
 
+<div id="main">
+[**Highlights**]{style="color: #006E62;font-size:large;"}  
+
+Below are general observations from across the full set of participating institutions. Each data point can be refined to any custom grouping of schools that is of interest.
+</div> 
+
+<div id="aside" class="aside">
+10%  
+of AACSB-accredited schools indicated they are also accredited by EQUIS and AMBA  
+
+75  
+Average number of full-time faculty or a school
+
+85%  
+of the participating schools indicate
+</div> 
+
+# {-}
+
+<div id="left" class="narrow-column">
+  In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
 In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+</div>  
+<div id="right" class="wide-column">
+  In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
 In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
-In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
-In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+</div>
+
+
 

@@ -1,0 +1,127 @@
+---
+output:
+  pagedown::html_paged:
+    toc: false
+    # change to true for a self-contained document, but it'll be a litte slower for Pandoc to render
+    self_contained: true
+    css: ["default-fonts", "../custom_paged.css", "../custom.css"]
+paged-footnotes: true
+lot: false
+lof: false
+params:
+  year: 2018--19
+  survey: Staff Compensation and Demographics Survey
+title: '`r sprintf("%s<br>%s<br>", params$year, params$survey)`'
+subtitle: "Executive Summary"
+---
+
+```{r setup, include=FALSE} 
+library(tidyverse)
+library(gt) 
+knitr::opts_chunk$set(echo = FALSE) 
+```
+
+# Preface {-}
+
+In March 2018, AACSB opened its 2017–18 Business School Questionnaire (BSQ), an online survey of business school characteristics. AACSB invited officials from more than 1,600 business schools to participate in the survey, 820 of which took part.[^1] The results provide a representative overview of AACSB's global membership, and business education at large. This executive summary provides a look into some of the highlights based on participant responses.  
+
+The 2017–18 BSQ tracks a variety of business school characteristics for the purpose of benchmarking and analysis. The survey captures data on faculty attributes, admissions, enrollment, degrees conferred, student and faculty demographics, class sizes, degree programs of all levels and all delivery methods, and basic financial data, such as tuition and operating budgets. The full set of data is available for participating institutions to use in DataDirect. The BSQ Overview Report provides information on the following:  
+
+* Institutional Characteristics  
+* Mission  
+* Finances  
+* Programs  
+* Faculty and Staff  
+* Enrollment and Degrees  
+
+The available 2017–18 BSQ Overview Reports are broken out by geographic location and AACSB
+accreditation status:  
+
+* All Participants  
+* AACSB-Accredited  
+* Asia-Pacific  
+* Europe, Middle East, and Africa (EMEA)  
+* All Participants Excluding the United States  
+* North America  
+* Oceania  
+* United States  
+
+This executive summary contains data drawn largely from the All Participants report.  
+
+For further information about this and other surveys, please visit [aacsb.edu/data](https://www.aacsb.edu/data). If you have questions regarding these reports, the Business School Questionnaire, or other AACSB Business Education Intelligence products, please contact [datadirect@aacsb.edu](mailto:datadirect@aacsb.edu).
+
+[^1]: The participation count for this executive summary is 820 schools, but AACSB's online database, DataDirect, may reflect different participation numbers, as schools submit their surveys and have them validated on an ongoing basis. 
+
+# Introduction {-}
+
+The Business School Questionnaire (BSQ) is AACSB's most comprehensive survey. It is the
+only globally distributed survey that offers insight into each participating institution's priorities with respect to teaching, intellectual contribution, and service. Additionally, the BSQ provides information on the research priorities of its participating institutions, which is the only existing globally representative metric for current research priorities in business education. The data contributed to the BSQ by our members is one reason AACSB is widely recognized as a trusted source for data and analysis on business education globally by many media outlets, such as the Wall Street Journal and the Financial Times.
+
+# Participation {-}
+
+The 2017–18 BSQ saw another year of record-breaking participation, with 820 business schools contribuing, representing 60 different countries and territories. In 2001, AACSB released its first BSQ, drawing participation from 436 institutions, which represented roughly 50 percent of AACSB's membership. The BSQ's participation rate has kept pace with membership growth and, in 2017–18, still reflects more than half of AACSB's global membership.
+
+```{r}
+tbl <- 
+  dplyr::tribble(
+    ~groupname, ~rowname, ~participants,
+    "Asia-Pacific",        "Asia (excluding Middle and Near East)",      76,   
+    "Asia-Pacific",        "Oceania",      26,   
+    "Europe, Middle East, and Africa (EMEA)",        "Africa",      6,  
+    "Europe, Middle East, and Africa (EMEA)",        "Europe and Near East",      136,  
+    "Europe, Middle East, and Africa (EMEA)",        "Middle East",      21,  
+    "The Americas",        "Canada",      35,
+    "The Americas",        "Latin America and Caribbean",      17,
+    "The Americas",        "United States",      503,
+  )
+
+gt(tbl) %>% 
+  summary_rows(
+    columns = vars(participants),
+    fns = "sum"
+  ) %>% 
+  tab_footnote(
+    footnote = "Excluding Puerto Rico, which is included in the Caribbean numbers",
+    locations = cells_stub(
+      rows = "United States"
+    )
+  ) %>% 
+  tab_options(
+    footnote.glyph = "*", table.width = pct(100)
+  )  
+```
+
+>Out of all the schools that indicated that they offer at least one bachelor’s degree program, the most common discipline reported was accounting (approximately 71 percent), with management as the second-most common discipline reported (approximately 63 percent).
+
+# {-} 
+
+<div id="main">
+[**Highlights**]{style="color: #006E62;font-size:large;"}  
+
+Below are general observations from across the full set of participating institutions. Each data point can be refined to any custom grouping of schools that is of interest.
+</div> 
+
+<div id="aside" class="aside">
+10%  
+of AACSB-accredited schools indicated they are also accredited by EQUIS and AMBA  
+
+75  
+Average number of full-time faculty or a school
+
+85%  
+of the participating schools indicate
+</div> 
+
+# {-}
+
+<div id="left" class="narrow-column">
+  In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+</div>  
+<div id="right" class="wide-column">
+  In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+</div>
+
+
+

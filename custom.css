@@ -36,9 +36,10 @@
 .pagedjs_page.pagedjs_first_page {
     width: var(--width);
     height: var(--height);
-    background-image: url(title_page.png);
-    background-size: 90% 60%;
-    background-repeat: no-repeat;
+    background-image: url(title_page.png), url(logo.png);
+    background-size: 90% 60%, 20% 5%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, 90% 90%;
 }
 
 .pagedjs_page.pagedjs_first_page .pagedjs_margin-top {

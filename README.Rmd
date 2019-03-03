@@ -28,6 +28,23 @@ knitr::opts_chunk$set(echo = FALSE,
 # Preface 
 
 This document provides an overview of the supplemental elements that can be used to improve the appearance of the Executive Summaries. For a general overview of R Markdown, please refer to this [cheatsheet](https://www.rstudio.com/resources/cheatsheets/#rmarkdown) from [RStudio](https://www.rstudio.com).
+  
+<div class="row" style="text-align:center;">
+  <div class="column_2">
+  
+  [bookdown.org/yihui/rmarkdown](https://bookdown.org/yihui/rmarkdown/)
+  
+  ![](https://bookdown.org/yihui/rmarkdown/images/cover.png){style="height:100%; width:90%;"}
+  
+  </div>
+  <div class="column_2">
+  
+  [rstudio.com/cheatsheets](https://www.rstudio.com/resources/cheatsheets/#rmarkdown)
+  
+  ![](https://d33wubrfki0l68.cloudfront.net/374f4c769f97c4ded7300d521eb59b24168a7261/c72ad/lesson-images/cheatsheets-1-cheatsheet.png){style="height:100%; width:90%"}
+
+  </div>
+</div> 
 
 # Basic  
 

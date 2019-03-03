@@ -1,0 +1,178 @@
+---
+output:
+  pagedown::html_paged:
+    toc: false
+    number_sections: false
+    # change to true for a self-contained document, but it'll be a litte slower for Pandoc to render
+    self_contained: true
+    css: ["default-fonts", "custom_paged.css", "custom.css"]
+paged-footnotes: true
+lot: false
+lof: false
+params:
+  year: 2018--19
+  survey: Template for AACSB''s
+title: '`r sprintf("%s<br>%s<br>", params$year, params$survey)`'
+subtitle: "Executive Summaries"
+---
+  
+```{r setup, include=FALSE} 
+library(tidyverse)
+library(gt) 
+knitr::opts_chunk$set(echo = FALSE) 
+```
+
+# Preface 
+
+This document provides an overview of the supplemental elements that can be used to improve the appearance of the Executive Summaries. For a general overview of R Markdown, please refer to this [cheatsheet](https://www.rstudio.com/resources/cheatsheets/#rmarkdown) from [RStudio](https://www.rstudio.com).
+
+# Basic  
+
+
+
+# Participation 
+
+The 2017–18 BSQ saw another year of record-breaking participation, with 820 business schools contribuing, representing 60 different countries and territories. In 2001, AACSB released its first BSQ, drawing participation from 436 institutions, which represented roughly 50 percent of AACSB's membership. The BSQ's participation rate has kept pace with membership growth and, in 2017–18, still reflects more than half of AACSB's global membership.
+
+```{r}
+tbl <- 
+  dplyr::tribble(
+    ~groupname, ~rowname, ~participants,
+    "Asia-Pacific",        "Asia (excluding Middle and Near East)",      76,   
+    "Asia-Pacific",        "Oceania",      26,   
+    "Europe, Middle East, and Africa (EMEA)",        "Africa",      6,  
+    "Europe, Middle East, and Africa (EMEA)",        "Europe and Near East",      136,  
+    "Europe, Middle East, and Africa (EMEA)",        "Middle East",      21,  
+    "The Americas",        "Canada",      35,
+    "The Americas",        "Latin America and Caribbean",      17,
+    "The Americas",        "United States",      503,
+  )
+
+gt(tbl) %>% 
+  summary_rows(
+    columns = vars(participants),
+    fns = "sum"
+  ) %>% 
+  tab_footnote(
+    footnote = "Excluding Puerto Rico, which is included in the Caribbean numbers",
+    locations = cells_stub(
+      rows = "United States"
+    )
+  ) %>% 
+  tab_options(
+    footnote.glyph = "*", table.width = pct(100)
+  )  
+```
+
+# Blockquotes 
+
+Blockquotes are written after `>`, e.g.,
+
+```markdown
+>Out of all the schools that indicated that they offer at least one bachelor’s degree program, the most common discipline reported was accounting (approximately 71 percent), with management as the second-most common discipline reported (approximately 63 percent).
+```
+
+The actual output (with the custom style) will look like:
+
+>Out of all the schools that indicated that they offer at least one bachelor’s degree program, the most common discipline reported was accounting (approximately 71 percent), with management as the second-most common discipline reported (approximately 63 percent).
+
+
+#  
+
+<div id="main">
+<h1>Highlights</h1>
+
+Below are general observations from across the full set of participating institutions. Each data point can be refined to any custom grouping of schools that is of interest.
+</div> 
+
+<div id="aside" class="aside">
+10%  
+of AACSB-accredited schools indicated they are also accredited by EQUIS and AMBA  
+
+75  
+Average number of full-time faculty or a school
+
+85%  
+of the participating schools indicate
+</div> 
+
+# 
+
+<div id="left" class="narrow-column">
+  In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+</div>  
+<div id="right" class="wide-column">
+  In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
+</div>
+
+# Asides 
+
+Sections split by content in the main body and also content in a sidebar can be inserted in the document using the `main_aside` snippet.
+
+[Snippets](https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets) are text macros used for quickly inserting common code or prose. Snippets To insert a snippet into an R Markdown documents you will need to type the whole character sequence for the snippet and press **Shift+Tab**. The following are a list of the available snippets and their function:
+
+* `main_aside`: Creates a sections split by content in the main body and also content in a sidebar. Replace `section_header` with the name of the section being created.
+
+
+
+#  
+
+<div id="main">
+<h1>Highlights</h1>
+
+Main content goes here...
+
+</div>
+<div id="aside" class="aside">
+
+Sidebar content goes here...
+
+Useful for inserting small images or notes.
+
+```{r}
+ggplot(mtcars, aes(hp, mpg)) + geom_point() + geom_smooth()
+```
+
+</div> 
+
+# Multiple columns 
+
+## Two column layout
+
+<div class="row">
+  <div class="column_2">
+  
+  Content of first column goes here
+  
+  </div>
+  <div class="column_2">
+  
+  Content of second column goes here
+  
+  </div>
+</div> 
+
+
+## Three column layout 
+
+<div class="row">
+  <div class="column_3">
+  
+  Content of first column goes here
+  
+  </div>
+  <div class="column_3">
+  
+  Content of second column goes here
+  
+  </div>
+  <div class="column_3">
+  
+  Content of third column goes here
+  
+  </div>
+</div> 
+
+

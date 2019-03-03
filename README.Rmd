@@ -19,7 +19,10 @@ subtitle: "Executive Summaries"
 ```{r setup, include=FALSE} 
 library(tidyverse)
 library(gt) 
-knitr::opts_chunk$set(echo = FALSE) 
+knitr::opts_chunk$set(echo = FALSE,
+                      comment = FALSE,
+                      warning = FALSE,
+                      message = FALSE) 
 ```
 
 # Preface 
@@ -76,37 +79,6 @@ The actual output (with the custom style) will look like:
 
 >Out of all the schools that indicated that they offer at least one bachelor’s degree program, the most common discipline reported was accounting (approximately 71 percent), with management as the second-most common discipline reported (approximately 63 percent).
 
-
-#  
-
-<div id="main">
-<h1>Highlights</h1>
-
-Below are general observations from across the full set of participating institutions. Each data point can be refined to any custom grouping of schools that is of interest.
-</div> 
-
-<div id="aside" class="aside">
-10%  
-of AACSB-accredited schools indicated they are also accredited by EQUIS and AMBA  
-
-75  
-Average number of full-time faculty or a school
-
-85%  
-of the participating schools indicate
-</div> 
-
-# 
-
-<div id="left" class="narrow-column">
-  In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
-In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
-</div>  
-<div id="right" class="wide-column">
-  In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
-In addition to these data, further information regarding enrollments, adminissions, faculty, programs.
-</div>
-
 # Asides 
 
 Sections split by content in the main body and also content in a sidebar can be inserted in the document using the `main_aside` snippet.
@@ -115,12 +87,10 @@ Sections split by content in the main body and also content in a sidebar can be 
 
 * `main_aside`: Creates a sections split by content in the main body and also content in a sidebar. Replace `section_header` with the name of the section being created.
 
-
-
 #  
 
 <div id="main">
-<h1>Highlights</h1>
+<h1>My Section Header</h1>
 
 Main content goes here...
 

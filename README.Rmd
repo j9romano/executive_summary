@@ -50,9 +50,9 @@ This document provides an overview of the supplemental elements that can be used
 
 
 
-# Participation 
+# Tables 
 
-The 2017–18 BSQ saw another year of record-breaking participation, with 820 business schools contribuing, representing 60 different countries and territories. In 2001, AACSB released its first BSQ, drawing participation from 436 institutions, which represented roughly 50 percent of AACSB's membership. The BSQ's participation rate has kept pace with membership growth and, in 2017–18, still reflects more than half of AACSB's global membership.
+
 
 ```{r}
 tbl <- 
@@ -96,13 +96,13 @@ The actual output (with the custom style) will look like:
 
 >Out of all the schools that indicated that they offer at least one bachelor’s degree program, the most common discipline reported was accounting (approximately 71 percent), with management as the second-most common discipline reported (approximately 63 percent).
 
-# Asides 
+# Snippets 
 
-Sections split by content in the main body and also content in a sidebar can be inserted in the document using the `main_aside` snippet.
+[Snippets](https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets) are text macros used for quickly inserting common code or prose. To insert a snippet into an R Markdown documents you will need to type the whole character sequence for the snippet and press **Shift+Tab**. The following are a list of the available snippets and their function:
 
-[Snippets](https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets) are text macros used for quickly inserting common code or prose. Snippets To insert a snippet into an R Markdown documents you will need to type the whole character sequence for the snippet and press **Shift+Tab**. The following are a list of the available snippets and their function:
-
-* `main_aside`: Creates a sections split by content in the main body and also content in a sidebar. Replace `section_header` with the name of the section being created.
+* `main_aside`: Creates a sections split by content in the main body and also content in a sidebar. Replace `section_header` with the name of the section being created.  
+* `cols_2`:  
+* `cols_3`:  
 
 #  
 

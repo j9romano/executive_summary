@@ -6,11 +6,11 @@
   --color-mbox: rgba(0, 0, 0, 0.2);
   --running-title-width: 2.5in;
   --screen-pages-spacing: 5mm;
-  --margin-left: 0.75in;
-  --margin-right: 1in;
+  --margin-left: 0.625in;
+  --margin-right: 0.5in;
   --content-width: calc(var(--width) - var(--margin-right) - var(--margin-left));
   --main-width: calc(var(--content-width) - var(--sidebar-width));
-  --sidebar-width: 1.25in;
+  --sidebar-width: 1.75in;
   --sidebar-horizontal-padding: 0.1in;
 }
 
@@ -188,7 +188,7 @@ blockquote {
 
 .aside{
   width: var(--sidebar-width);
-  padding: 0 var(--sidebar-horizontal-padding);
+  padding: 0 0 0 var(--sidebar-horizontal-padding);
   float: right;
   position: absolute;
   right: 0;

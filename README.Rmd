@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE,
 
 # Preface 
 
-This document provides an overview of the supplemental elements that can be used to improve the appearance of the Executive Summaries. For a general overview of R Markdown, please refer to this [cheatsheet](https://www.rstudio.com/resources/cheatsheets/#rmarkdown) from [RStudio](https://www.rstudio.com).
+This document provides an overview of the supplemental elements that can be used to improve the appearance of the Executive Summaries. For a general overview of R Markdown, please refer to either of two resources below.
   
 <div class="row" style="text-align:center;">
   <div class="column_2">
@@ -48,6 +48,25 @@ This document provides an overview of the supplemental elements that can be used
 
 # Basic  
 
+## Blockquotes 
+
+Blockquotes are written after `>`, e.g.,
+
+```markdown
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+> Quisque in sodales dolor, non suscipit leo. 
+> Proin id massa quis libero tincidunt gravida. 
+> Mauris sollicitudin eleifend dignissim. 
+> Etiam id urna sit amet mauris rutrum luctus. 
+```
+
+The actual output (with the custom style) will look like:
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+> Quisque in sodales dolor, non suscipit leo. 
+> Proin id massa quis libero tincidunt gravida. 
+> Mauris sollicitudin eleifend dignissim. 
+> Etiam id urna sit amet mauris rutrum luctus. 
 
 
 # Tables 
@@ -84,27 +103,17 @@ gt(tbl) %>%
   )  
 ```
 
-# Blockquotes 
-
-Blockquotes are written after `>`, e.g.,
-
-```markdown
->Out of all the schools that indicated that they offer at least one bachelor’s degree program, the most common discipline reported was accounting (approximately 71 percent), with management as the second-most common discipline reported (approximately 63 percent).
-```
-
-The actual output (with the custom style) will look like:
-
->Out of all the schools that indicated that they offer at least one bachelor’s degree program, the most common discipline reported was accounting (approximately 71 percent), with management as the second-most common discipline reported (approximately 63 percent).
-
 # Snippets 
 
 [Snippets](https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets) are text macros used for quickly inserting common code or prose. To insert a snippet into an R Markdown documents you will need to type the whole character sequence for the snippet and press **Shift+Tab**. The following are a list of the available snippets and their function:
 
-* `main_aside`: Creates a sections split by content in the main body and also content in a sidebar. Replace `section_header` with the name of the section being created.  
-* `cols_2`:  
-* `cols_3`:  
+* [`main_aside`](#main-and-aside): Creates a sections split by content in the main body and also content in a sidebar. Replace `section_header` with the name of the section being created.  
 
-#  
+* [`cols_2`](#two-column-layout): Creates a two column element 
+
+* [`cols_3`](#three-column-layout):  Creates a 3 column element
+
+# Main and Aside
 
 <div id="main">
 <h1>My Section Header</h1>

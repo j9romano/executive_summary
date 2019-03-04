@@ -48,6 +48,10 @@ This document provides an overview of the supplemental elements that can be used
 
 # Basic  
 
+## New Sections
+
+New sections are started with `# Header Title` which will also start them on a new page, e.g., the header above is `# Basic`.
+
 ## Blockquotes 
 
 Blockquotes are written after `>`, e.g.,
@@ -68,7 +72,6 @@ The actual output (with the custom style) will look like:
 > Mauris sollicitudin eleifend dignissim. 
 > Etiam id urna sit amet mauris rutrum luctus. 
 
-
 # Tables 
 
 
@@ -88,10 +91,12 @@ tbl <-
   )
 
 gt(tbl) %>% 
+  tab_stubhead_label(label = md("**Region**")) %>% 
   summary_rows(
     columns = vars(participants),
     fns = "sum"
-  ) %>% 
+  ) %>%
+  cols_label(participants = md("**Participants**")) %>%
   tab_footnote(
     footnote = "Excluding Puerto Rico, which is included in the Caribbean numbers",
     locations = cells_stub(
@@ -99,8 +104,29 @@ gt(tbl) %>%
     )
   ) %>% 
   tab_options(
-    footnote.glyph = "*", table.width = pct(100)
-  )  
+    footnote.glyph = "*", table.width = pct(100), 
+    table.border.top.width = gt::px(0), 
+    column_labels.background.color = "#006E62", 
+    field.border.top.color = "#006E62", field.border.top.width = px(3),
+    field.border.bottom.color = "#006E62",  
+    heading.border.bottom.color = "#006E62",
+    stub_group.background.color = "#DBD9D6", 
+    stub_group.border.top.color = "#DBD9D6",
+    stub_group.border.bottom.color = "#DBD9D6"
+  ) %>%
+  tab_header(
+    title = "Number of Participating Schools by Region"
+  ) %>% 
+  tab_style(
+    style = "font-weight: bold; font-size: 20; text-align: left; border-bottom-width: 2px;border-bottom-color: #006E62; color: #006E62", 
+    locations = cells_title(groups = "title")
+  ) 
+```
+
+# Figures
+
+```{r, fig.cap="Sample Figure"}
+ggplot(mtcars, aes(hp, mpg)) + geom_point() + geom_smooth()
 ```
 
 # Snippets 
@@ -116,7 +142,7 @@ gt(tbl) %>%
 # Main and Aside
 
 <div id="main">
-<h1>My Section Header</h1>
+<h1>Section Header Goes Here</h1>
 
 Main content goes here...
 

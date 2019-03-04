@@ -194,6 +194,13 @@ blockquote {
   right: 0;
 }
 
+.gt_bottom_border {
+    border-bottom-style: initial;
+    border-bottom-width: 2px;
+    border-bottom-color: #006E62;
+    padding-bottom: 25px!important;
+}
+
 /* generated content */
 a[href^="http"]:not([class="uri"])::after {
     /*content: " (" attr(href) ")";*/
